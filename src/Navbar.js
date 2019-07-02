@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './Navbar.scss';
 
 class Navbar extends Component {
   constructor() {
@@ -10,7 +11,11 @@ class Navbar extends Component {
 
   render() {
     return (
-      null
+      <nav className="navbar">
+        <button className="tab">Home</button>
+        <button className="tab">Forum</button>
+        <button className="tab">About</button>
+      </nav>
     )
   }
 }
