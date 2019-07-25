@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Route} from 'react-router-dom';
 import {fetchAnime, fetchAdditionalAnime} from '../../apiCalls'
 import {gatherAnime, gatherMoreAnime} from '../../actions/index';
 import Navbar from '../Navbar/Navbar';
@@ -40,8 +41,11 @@ class App extends Component {
       <main className="app">
         <h1>Anime Tracker</h1>
         <Navbar />
-        <Form addToList={this.addToList}/>
-        <AnimeContainer animeList={this.state.animeList}/>
+        <Route exact path='/'
+          render={() => (
+            <AnimeContainer />
+          )} />
+        {/* <Form addToList={this.addToList}/> */}
       </main>
     )
   }

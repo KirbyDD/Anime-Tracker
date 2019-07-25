@@ -1,10 +1,11 @@
 import React from 'react';
 import Card from '../Card/Card'
+import {connect} from 'react-redux';
 import './AnimeContainer.scss'
 
-const AnimeContainer = ({animeList}) => {
-  let list = animeList.map(anime => {
-    return <Card name={anime.name} episode={anime.episode} id={anime.id}/>
+const AnimeContainer = (props) => {
+  let list = props.anime.map(anime => {
+    return <Card {...anime}/>
   })
   return (
     <section>
@@ -16,4 +17,8 @@ const AnimeContainer = ({animeList}) => {
   )
 }
 
-export default AnimeContainer;
+const mapStateToProps = store => ({
+  anime: store.anime
+})
+
+export default connect(mapStateToProps)(AnimeContainer);

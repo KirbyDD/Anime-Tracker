@@ -14,8 +14,8 @@ class Navbar extends Component {
     return (
       <nav className="navbar">
         <NavLink to='/' className="tab" exact activeClassName="selected">Home</NavLink>
-        <NavLink to='/forums' className="tab" exact activeClassName="selected">Forums</NavLink>
-        <NavLink to='/about' className="tab" exact activeClassName="selected">About</NavLink>
+        <NavLink to='/watchlist' className="tab" exact activeClassName="selected">Your Watchlist</NavLink>
+        <NavLink to='/about' className="tab" exact activeClassName="selected">Anime Dictionary</NavLink>
       </nav>
     )
   }
