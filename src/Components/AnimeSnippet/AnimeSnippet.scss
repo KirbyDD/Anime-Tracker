@@ -5,5 +5,17 @@
   height: 400px;
   margin: 5px 12px;
   padding: 7px;
-  // width: 22%;
+  &:hover {
+    box-shadow: 5px 10px 5px blue;
+  }
+}
+
+.snippet-title {
+  background-color: black;
+  color: gold;
+  font-size: 30px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1;
 }
