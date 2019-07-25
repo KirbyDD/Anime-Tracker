@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import {fetchAnime} from '../../apiCalls'
+import {fetchAnime, fetchAdditionalAnime} from '../../apiCalls'
+import {gatherAnime, gatherMoreAnime} from '../../actions/index';
 import Navbar from '../Navbar/Navbar';
 import Form from '../Form/Form'
 import AnimeContainer from '../AnimeContainer/AnimeContainer'
+import dataCleaner from '../../dataCleaner';
+import {connect} from 'react-redux';
 import './App.scss';
 
 class App extends Component {
@@ -12,8 +15,20 @@ class App extends Component {
       animeList: []
     }
   }
-  componentDidMount(){
-    fetchAnime()
+  async componentDidMount(){
+    try{
+      const result = await fetchAnime()
+      const cleanData = dataCleaner(result.data)
+      this.props.gatherAnime(cleanData)
+      const result2 = await fetchAdditionalAnime()
+      const cleanData2 = dataCleaner(result2.data)
+      this.props.gatherMoreAnime(cleanData2)
+    
+    } catch(error) {
+      console.log(error)
+    }
+
+
   }
 
   addToList = newShow => {
@@ -32,4 +47,9 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  gatherAnime: data => dispatch(gatherAnime(data)),
+  gatherMoreAnime: data => dispatch(gatherMoreAnime(data))
+})
+
+export default connect(null, mapDispatchToProps)(App);

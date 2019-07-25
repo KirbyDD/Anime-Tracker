@@ -17,3 +17,8 @@ export const gatherAnime = data => ({
   type: 'GATHER_ANIME',
   data
 })
+
+export const gatherMoreAnime = data => ({
+  type: 'GATHER_MORE_ANIME',
+  data
+})
