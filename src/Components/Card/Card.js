@@ -1,13 +1,12 @@
 import React from 'react';
 import './Card.scss'
 
-const Card = ({name, episode, id}) => {
+const AnimeSnippet = props => {
   return (
-    <article className="card">
-      <h3>Name: {name}</h3>
-      <p>Episode #: {episode}</p>
+    <article className="snippet-image">
+      <img src={props.posterImage.small} alt={`poster for ${props.enTitle}`} />
     </article>
   )
 }
 
-export default Card;
+export default AnimeSnippet;

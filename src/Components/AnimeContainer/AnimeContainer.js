@@ -1,11 +1,11 @@
 import React from 'react';
-import Card from '../Card/Card'
+import AnimeSnippet from '../Card/Card'
 import {connect} from 'react-redux';
 import './AnimeContainer.scss'
 
 const AnimeContainer = (props) => {
   let list = props.anime.map(anime => {
-    return <Card {...anime}/>
+    return <AnimeSnippet {...anime}/>
   })
   return (
     <section>
