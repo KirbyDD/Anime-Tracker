@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
-import Form from './Form'
-import AnimeContainer from './AnimeContainer'
+import {fetchAnime} from '../../apiCalls'
+import Navbar from '../Navbar/Navbar';
+import Form from '../Form/Form'
+import AnimeContainer from '../AnimeContainer/AnimeContainer'
 import './App.scss';
 
 class App extends Component {
@@ -10,6 +11,9 @@ class App extends Component {
     this.state = {
       animeList: []
     }
+  }
+  componentDidMount(){
+    fetchAnime()
   }
 
   addToList = newShow => {
