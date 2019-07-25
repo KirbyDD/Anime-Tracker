@@ -1,5 +1,5 @@
 import React from 'react';
-import AnimeSnippet from '../Card/Card'
+import AnimeSnippet from '../AnimeSnippet/AnimeSnippet'
 import {connect} from 'react-redux';
 import './AnimeContainer.scss'
 
