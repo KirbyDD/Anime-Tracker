@@ -8,6 +8,8 @@ import AnimeContainer from '../AnimeContainer/AnimeContainer'
 import dataCleaner from '../../dataCleaner';
 import {connect} from 'react-redux';
 import './App.scss';
+import AnimeDetails from '../AnimeDetails/AnimeDetails';
+
 
 class App extends Component {
   constructor() {
@@ -45,15 +47,26 @@ class App extends Component {
           render={() => (
             <AnimeContainer />
           )} />
+        <Route exact path='/:id'
+          render={({match}) => {
+            const id = match.params;
+            const show = this.props.anime.find(anime => parseInt(anime.id) === parseInt(id.id))
+            console.log(show)
+            return <AnimeDetails {...show} />
+          }} />
         {/* <Form addToList={this.addToList}/> */}
       </main>
     )
   }
 }
 
+const mapStateToProps = store => ({
+  ...store
+})
+
 const mapDispatchToProps = dispatch => ({
   gatherAnime: data => dispatch(gatherAnime(data)),
   gatherMoreAnime: data => dispatch(gatherMoreAnime(data))
 })
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

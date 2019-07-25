@@ -29,7 +29,7 @@ class AnimeSnippet extends Component {
   render() {
     let title = this.titleToDisplay()
     return (
-      <Link to={`/${this.props.enTitle}`}>
+      <Link to={`/${this.props.id}`}>
       {this.state.title && <p className='snippet-title'>{title}</p>}
         <img src={this.props.posterImage.small} 
               alt={`poster for ${this.props.enTitle}`} 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import './AnimeDetails.scss'
 
 class AnimeDetails extends Component {
   constructor(props){
@@ -7,26 +8,34 @@ class AnimeDetails extends Component {
   }
 
   addToWatchList = () => {
-    
+
+  }
+
+  titleToDisplay = () => {
+    if(this.props.enTitle){
+      return this.props.enTitle
+    } else {
+      return this.props.jpTitle
+    }
   }
 
   render(){
+    let title = this.titleToDisplay();
     return(
       <section>
         <img />
-        <p>Status: </p>
-        <h2>Title: </h2>
+        <h2>Title: {title}</h2>
         <article>Synopsis
-          <p></p>
+          <p>{this.props.synopsis}</p>
         </article>
         <div>
-          <p>Rating: </p>
-          <p>Age Rating:</p>
+          <p>Rating: {this.props.rating} </p>
+          <p>Age Rating: {this.props.ageRating}</p>
         </div>
         <div>
-          <p>Start Date</p>
-          <p>End Date</p>
-          <p>Number of Episodes</p>
+          <p>Start Date: {this.props.startDate}</p>
+          <p>End Date: {this.props.endDate}</p>
+          <p>Number of Episodes: {this.props.episodes}</p>
           <button>Add To Watch List</button>
         </div>
       </section>
