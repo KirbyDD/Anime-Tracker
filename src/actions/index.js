@@ -1,6 +1,6 @@
-export const addShow = newShow => ({
+export const addShow = id => ({
   type: 'ADD_SHOW',
-  newShow
+  id
 })
 
 export const removeShow = id => ({

@@ -1,13 +1,19 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './AnimeDetails.scss'
+import { addShow } from '../../actions';
 
 class AnimeDetails extends Component {
   constructor(props){
     super(props);
   }
 
-  addToWatchList = () => {
+  checkList = id => {
+    if(this.props.followedShows.includes(id)){
+      return;
+    } else {
+      this.props.addToWatchList(id)
+    }
 
   }
 
@@ -36,11 +42,19 @@ class AnimeDetails extends Component {
           <p>Start Date: {this.props.startDate}</p>
           <p>End Date: {this.props.endDate}</p>
           <p>Number of Episodes: {this.props.episodes}</p>
-          <button>Add To Watch List</button>
+          <button onClick={e => this.checkList(this.props.id)}>Add To Watch List</button>
         </div>
       </section>
     )
   }
 }
 
-export default connect(null)(AnimeDetails);
+const mapStateToProps = store => ({
+  ...store
+})
+
+const mapDispatchToProps = dispatch =>({
+  addToWatchList: id => dispatch(addShow(id))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AnimeDetails);
