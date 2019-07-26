@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './AnimeDetails.scss'
-import { addShow } from '../../actions';
+import { addShow, removeShow } from '../../actions';
 
 class AnimeDetails extends Component {
   constructor(props){
@@ -10,9 +10,9 @@ class AnimeDetails extends Component {
 
   checkList = id => {
     if(this.props.followedShows.includes(id)){
-      return;
+      this.props.removeFromWatchList(id)
     } else {
-      this.props.addToWatchList(id)
+      this.props.addToWatchList(id)  
     }
 
   }
@@ -54,7 +54,8 @@ const mapStateToProps = store => ({
 })
 
 const mapDispatchToProps = dispatch =>({
-  addToWatchList: id => dispatch(addShow(id))
+  addToWatchList: id => dispatch(addShow(id)),
+  removeFromWatchList: id => dispatch(removeShow(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnimeDetails);
