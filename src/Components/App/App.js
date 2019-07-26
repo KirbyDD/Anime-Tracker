@@ -9,6 +9,7 @@ import dataCleaner from '../../dataCleaner';
 import {connect} from 'react-redux';
 import './App.scss';
 import AnimeDetails from '../AnimeDetails/AnimeDetails';
+import WatchListContainer from '../WatchListContainer/WatchListContainer';
 
 
 class App extends Component {
@@ -47,7 +48,11 @@ class App extends Component {
           render={() => (
             <AnimeContainer />
           )} />
-        <Route exact path='/:id'
+        <Route exact path='/watchlist'
+        render={() => (
+          <WatchListContainer />
+        )} />
+        <Route exact path='/anime/:id'
           render={({match}) => {
             const id = match.params;
             const show = this.props.anime.find(anime => parseInt(anime.id) === parseInt(id.id))

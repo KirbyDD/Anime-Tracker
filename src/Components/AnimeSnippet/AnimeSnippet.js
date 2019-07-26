@@ -6,7 +6,7 @@ class AnimeSnippet extends Component {
   constructor(props){
     super(props)
     this.state = {
-      tite: false
+      title: false
     }
   }
 
@@ -26,10 +26,19 @@ class AnimeSnippet extends Component {
     }
   }
 
+  checkIsFav = () => {
+    if(this.props.isFav){
+      return `/watchlist/${this.props.id}`
+    } else {
+      return `/anime/${this.props.id}`
+    }
+  }
+
   render() {
     let title = this.titleToDisplay()
+    let route = this.checkIsFav()
     return (
-      <Link to={`/${this.props.id}`}>
+      <Link to={route}>
       {this.state.title && <p className='snippet-title'>{title}</p>}
         <img src={this.props.posterImage.small} 
               alt={`poster for ${this.props.enTitle}`} 
