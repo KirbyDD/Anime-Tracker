@@ -14,7 +14,15 @@ class AnimeDetails extends Component {
     } else {
       this.props.addToWatchList(id)  
     }
+    this.updateFavButton(id);
+  }
 
+  updateFavButton = id => {
+    if(this.props.followedShows.includes(id)){
+      return 'Remove from Watch List'
+    } else {
+      return 'Add to Watch List'
+    }
   }
 
   titleToDisplay = () => {
@@ -27,6 +35,7 @@ class AnimeDetails extends Component {
 
   render(){
     let title = this.titleToDisplay();
+    let btntext = this.updateFavButton(this.props.id);
     return(
       <section>
         <img />
@@ -42,7 +51,7 @@ class AnimeDetails extends Component {
           <p>Start Date: {this.props.startDate}</p>
           <p>End Date: {this.props.endDate}</p>
           <p>Number of Episodes: {this.props.episodes}</p>
-          <button onClick={e => this.checkList(this.props.id)}>Add To Watch List</button>
+          <button onClick={e => this.checkList(this.props.id)}>{btntext}</button>
         </div>
       </section>
     )
