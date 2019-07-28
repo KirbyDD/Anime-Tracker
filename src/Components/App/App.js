@@ -10,6 +10,7 @@ import {connect} from 'react-redux';
 import './App.scss';
 import AnimeDetails from '../AnimeDetails/AnimeDetails';
 import WatchListContainer from '../WatchListContainer/WatchListContainer';
+import WatchListDetails from '../WatchListDetails/WatchListDetails';
 
 
 class App extends Component {
@@ -56,9 +57,16 @@ class App extends Component {
           render={({match}) => {
             const id = match.params;
             const show = this.props.anime.find(anime => parseInt(anime.id) === parseInt(id.id))
-            console.log(show)
             return <AnimeDetails {...show} />
-          }} />
+        }} />
+        <Route exact path='/watchlist/:id'
+          render={({match}) => {
+            const id = match.params
+            const show = this.props.anime.find(anime => parseInt(anime.id) === parseInt(id.id))
+            console.log(show)
+            return <WatchListDetails {...show} />
+          }}
+          />
         {/* <Form addToList={this.addToList}/> */}
       </main>
     )
