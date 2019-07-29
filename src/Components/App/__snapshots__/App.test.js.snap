@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshot 1`] = `
+<main
+  className="app"
+>
+  <img
+    alt="background with multiple anime characters"
+    className="background-photo"
+    src="https://images6.alphacoders.com/656/thumb-1920-656029.png"
+  />
+  <header>
+    <h1>
+      Anime Tracker
+    </h1>
+    <Navbar />
+  </header>
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/watchlist"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/anime/:id"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/watchlist/:id"
+    render={[Function]}
+  />
+</main>
+`;

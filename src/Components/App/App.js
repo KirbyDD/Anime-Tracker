@@ -12,12 +12,9 @@ import WatchListContainer from '../WatchListContainer/WatchListContainer';
 import WatchListDetails from '../WatchListDetails/WatchListDetails';
 
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
-    this.state = {
-      animeList: []
-    }
   }
   async componentDidMount(){
     try{
@@ -33,10 +30,6 @@ class App extends Component {
     }
 
 
-  }
-
-  addToList = newShow => {
-    this.setState({ animeList: [...this.state.animeList, newShow]}) 
   }
 
   render() {
