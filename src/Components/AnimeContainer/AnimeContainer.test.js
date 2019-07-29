@@ -22,7 +22,7 @@ describe('Anime Container', () => {
 
   beforeEach(function() {
     wrapper = shallow(
-      <AnimeContainer anime={anime} key/>
+      <AnimeContainer anime={anime}/>
     )
   })
 

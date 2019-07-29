@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anime Container should match snapshot 1`] = `
+<section
+  className="watchlist"
+>
+  <AnimeSnippet
+    id={1}
+    isFav={true}
+    key="1"
+    name="anime1"
+  />
+  <AnimeSnippet
+    id={2}
+    isFav={true}
+    key="2"
+    name="anime2"
+  />
+  <AnimeSnippet
+    id={3}
+    isFav={true}
+    key="3"
+    name="anime3"
+  />
+</section>
+`;
