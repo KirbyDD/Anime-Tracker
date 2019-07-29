@@ -22,3 +22,9 @@ export const gatherMoreAnime = data => ({
   type: 'GATHER_MORE_ANIME',
   data
 })
+
+export const updateCurrentEpisode = (id, value) => ({
+  type: 'UPDATE_CURR_EP',
+  id,
+  value
+})

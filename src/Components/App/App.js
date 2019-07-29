@@ -62,7 +62,7 @@ class App extends Component {
         <Route exact path='/watchlist/:id'
           render={({match}) => {
             const id = match.params
-            const show = this.props.anime.find(anime => parseInt(anime.id) === parseInt(id.id))
+            const show = this.props.followedShows.find(anime => parseInt(anime.id) === parseInt(id.id))
             console.log(show)
             return <WatchListDetails {...show} />
           }}
