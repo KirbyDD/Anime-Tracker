@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {updateCurrentEpisode, updateComment, removeShow} from '../../actions/index';
 import './WatchListDetails.scss'
 
-class WatchListDetails extends Component {
+export class WatchListDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WatchList Details should match snapshot 1`] = `
+<section
+  className="watchlist-details"
+>
+  <div
+    className="watchlist-detail-info"
+  >
+    <h2>
+      Life of TronKat
+    </h2>
+    <h3>
+      This is the synopsis
+    </h3>
+    <p
+      className="detail-text"
+    >
+      What Episode are you currently on?
+    </p>
+    <p
+      className="detail-text"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Update
+    </button>
+    <p
+      className="detail-text"
+    >
+      Reminder Section
+    </p>
+    <p
+      className="detail-text"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Update
+    </button>
+    <br />
+    <Link
+      to="/watchlist"
+    >
+      <button
+        className="remove-btn"
+        onClick={[Function]}
+      >
+        Remove From WatchList
+      </button>
+    </Link>
+  </div>
+  <img
+    className="side-image"
+    src="https://i.imgur.com/vihivug.jpg"
+  />
+</section>
+`;
+
+exports[`WatchList Details should match snapshot 2`] = `
+<section
+  className="watchlist-details"
+>
+  <div
+    className="watchlist-detail-info"
+  >
+    <h2>
+      Life of TronKat
+    </h2>
+    <h3>
+      This is the synopsis
+    </h3>
+    <p
+      className="detail-text"
+    >
+      What Episode are you currently on?
+    </p>
+    <p
+      className="detail-text"
+    />
+    <select
+      onChange={[Function]}
+      selected={1}
+    >
+      <option
+        value={1}
+      >
+        1
+      </option>
+      <option
+        value={2}
+      >
+        2
+      </option>
+      <option
+        value={3}
+      >
+        3
+      </option>
+      <option
+        value={4}
+      >
+        4
+      </option>
+      <option
+        value={5}
+      >
+        5
+      </option>
+      <option
+        value={6}
+      >
+        6
+      </option>
+      <option
+        value={7}
+      >
+        7
+      </option>
+      <option
+        value={8}
+      >
+        8
+      </option>
+      <option
+        value={9}
+      >
+        9
+      </option>
+      <option
+        value={10}
+      >
+        10
+      </option>
+      <option
+        value={11}
+      >
+        11
+      </option>
+      <option
+        value={12}
+      >
+        12
+      </option>
+      <option
+        value={13}
+      >
+        13
+      </option>
+      <option
+        value={14}
+      >
+        14
+      </option>
+      <option
+        value={15}
+      >
+        15
+      </option>
+      <option
+        value={16}
+      >
+        16
+      </option>
+      <option
+        value={17}
+      >
+        17
+      </option>
+      <option
+        value={18}
+      >
+        18
+      </option>
+      <option
+        value={19}
+      >
+        19
+      </option>
+      <option
+        value={20}
+      >
+        20
+      </option>
+    </select>
+    <p
+      className="detail-text"
+    >
+      Reminder Section
+    </p>
+    <p
+      className="detail-text"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Update
+    </button>
+    <br />
+    <Link
+      to="/watchlist"
+    >
+      <button
+        className="remove-btn"
+        onClick={[Function]}
+      >
+        Remove From WatchList
+      </button>
+    </Link>
+  </div>
+  <img
+    className="side-image"
+    src="https://i.imgur.com/vihivug.jpg"
+  />
+</section>
+`;
+
+exports[`WatchList Details should match snapshot 3`] = `
+<section
+  className="watchlist-details"
+>
+  <div
+    className="watchlist-detail-info"
+  >
+    <h2>
+      Life of TronKat
+    </h2>
+    <h3>
+      This is the synopsis
+    </h3>
+    <p
+      className="detail-text"
+    >
+      What Episode are you currently on?
+    </p>
+    <p
+      className="detail-text"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Update
+    </button>
+    <p
+      className="detail-text"
+    >
+      Reminder Section
+    </p>
+    <p
+      className="detail-text"
+    />
+    <article>
+      <textarea
+        placeholder="Type new reminder here"
+      />
+      <br />
+      <button
+        onClick={[Function]}
+      >
+        Sumbit
+      </button>
+    </article>
+    <br />
+    <Link
+      to="/watchlist"
+    >
+      <button
+        className="remove-btn"
+        onClick={[Function]}
+      >
+        Remove From WatchList
+      </button>
+    </Link>
+  </div>
+  <img
+    className="side-image"
+    src="https://i.imgur.com/vihivug.jpg"
+  />
+</section>
+`;
