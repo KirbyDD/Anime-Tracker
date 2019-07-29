@@ -3,10 +3,8 @@ import {connect} from 'react-redux';
 import AnimeSnippet from '../AnimeSnippet/AnimeSnippet';
 
 const WatchListContainer = props => {
-  let list = props.anime.map(anime => {
-    if(props.followedShows.includes(anime.id)){
-      return <AnimeSnippet {...anime} isFav={true} />
-    }
+  let list = props.followedShows.map(anime => {
+      return <AnimeSnippet {...anime} isFav={true} />   
   })
   return (
     <section>

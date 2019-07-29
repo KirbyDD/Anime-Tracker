@@ -20,6 +20,7 @@ class AnimeDetails extends Component {
         enTitle: this.props.enTitle,
         jpTitle: this.props.jpTitle,
         episodes: this.props.episodes,
+        posterImage: this.props.posterImage,
         coverImage: this.props.coverImage,
         currentEpisode: 1,
         comment: ''
