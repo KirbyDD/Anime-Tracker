@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anime Details should match snapshot 1`] = `
+<section
+  className="anime-details"
+>
+  <img
+    className="poster"
+    src="https://i.imgur.com/vihivug.jpg"
+  />
+  <div
+    className="details-styling"
+  >
+    <h2>
+      Title: 
+      Life of TronKat
+    </h2>
+    <article>
+      <h3>
+        Synopsis
+      </h3>
+      <p>
+        This is the synopsis
+      </p>
+    </article>
+    <div>
+      <p>
+        Rating: 
+        99.9
+         
+      </p>
+      <p>
+        Age Rating: 
+        17+
+      </p>
+    </div>
+    <div>
+      <p>
+        Start Date: 
+        1990-01-26
+      </p>
+      <p>
+        End Date: 
+        Still Playing
+      </p>
+      <p>
+        Number of Episodes: 
+        27
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        Remove from Watch List
+      </button>
+    </div>
+  </div>
+</section>
+`;

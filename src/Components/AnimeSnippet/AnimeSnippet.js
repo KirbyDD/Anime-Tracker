@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import './AnimeSnippet.scss'
 
-class AnimeSnippet extends Component {
+export class AnimeSnippet extends Component {
   constructor(props){
     super(props)
     this.state = {

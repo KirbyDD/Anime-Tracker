@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anime Snippet should match snapshot 1`] = `
+<Link
+  to="/anime/1"
+>
+  <img
+    alt="poster for Life of TronKat"
+    className="snippet-image"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    src="https://i.imgur.com/vihivug.jpg"
+  />
+</Link>
+`;
+
+exports[`Anime Snippet should match snapshot 2`] = `
+<Link
+  to="/anime/1"
+>
+  <p
+    className="snippet-title"
+  >
+    Life of TronKat
+  </p>
+  <img
+    alt="poster for Life of TronKat"
+    className="snippet-image"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    src="https://i.imgur.com/vihivug.jpg"
+  />
+</Link>
+`;
+
+exports[`Anime Snippet should match snapshot when it isFav is true 1`] = `
+<Link
+  to="/watchlist/1"
+>
+  <img
+    alt="poster for Life of TronKat"
+    className="snippet-image"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    src="https://i.imgur.com/vihivug.jpg"
+  />
+</Link>
+`;

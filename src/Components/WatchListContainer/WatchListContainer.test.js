@@ -17,7 +17,7 @@ let anime = [
   }
 ]
 
-describe('Anime Container', () => {
+describe('Watch List Container', () => {
   let wrapper;
 
   beforeEach(function() {

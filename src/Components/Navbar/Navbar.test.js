@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {Navbar} from './Navbar';
 
-describe('Anime Container', () => {
+describe('Navbar', () => {
   let wrapper;
 
   beforeEach(function() {

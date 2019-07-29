@@ -3,14 +3,13 @@ import {connect} from 'react-redux';
 import './AnimeDetails.scss'
 import { addShow, removeShow } from '../../actions';
 
-class AnimeDetails extends Component {
+export class AnimeDetails extends Component {
   constructor(props){
     super(props);
   }
 
   checkList = id => {
     let result = this.props.followedShows.find(show => show.id === id)
-    console.log(result)
     if(result){
       this.props.removeFromWatchList(id)
     } else {
