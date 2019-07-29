@@ -1,9 +1,23 @@
 .app{
-  background: darkgray;
   color: gold;
+}
+
+.background-photo {
+  position: fixed;
+  filter: brightness(40%);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
 
 h1 {
   text-align: center;
+  margin-top: 0px;
+}
+
+header {
+  background-color: rgb(37, 37, 35);
+  padding: 20px;
+  z-index: 1;
 }
 

@@ -3,7 +3,6 @@ import {Route} from 'react-router-dom';
 import {fetchAnime, fetchAdditionalAnime} from '../../apiCalls'
 import {gatherAnime, gatherMoreAnime} from '../../actions/index';
 import Navbar from '../Navbar/Navbar';
-import Form from '../Form/Form'
 import AnimeContainer from '../AnimeContainer/AnimeContainer'
 import dataCleaner from '../../dataCleaner';
 import {connect} from 'react-redux';
@@ -43,8 +42,13 @@ class App extends Component {
   render() {
     return(
       <main className="app">
+        <img src='https://images6.alphacoders.com/656/thumb-1920-656029.png' 
+            alt='background with multiple anime characters'
+            className='background-photo' />
+        <header>
         <h1>Anime Tracker</h1>
         <Navbar />
+        </header>
         <Route exact path='/'
           render={() => (
             <AnimeContainer />
@@ -67,7 +71,6 @@ class App extends Component {
             return <WatchListDetails {...show} />
           }}
           />
-        {/* <Form addToList={this.addToList}/> */}
       </main>
     )
   }
