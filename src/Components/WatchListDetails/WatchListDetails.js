@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {updateCurrentEpisode, updateComment, removeShow} from '../../actions/index'
+import {updateCurrentEpisode, updateComment, removeShow} from '../../actions/index';
+import './WatchListDetails.scss'
 
 class WatchListDetails extends Component {
   constructor(props) {
@@ -77,11 +78,12 @@ class WatchListDetails extends Component {
     let currentEpisode = this.setCurrentEpisode();
     let comment = this.setComment();
     return(
-      <section>
+      <section className='watchlist-details'>
+        <div className='watchlist-detail-info'>
         <h2>{title}</h2>
         <h3>{this.props.synopsis}</h3>
-        <p>What Episode are you currently on?</p>
-        <p>{currentEpisode}</p>
+        <p className='detail-text'>What Episode are you currently on?</p>
+        <p className='detail-text'>{currentEpisode}</p>
         {this.state.epBtn && 
           <button onClick={e => this.changeCurrentEpisode()}>Update</button>
         }
@@ -91,20 +93,25 @@ class WatchListDetails extends Component {
           {this.numOptions()}
         </select>
         }
-        <p>Reminder Section</p>
-        <p>{comment}</p>
+        <p className='detail-text'>Reminder Section</p>
+        <p className='detail-text'>{comment}</p>
         {this.state.commentBtn && 
           <button onClick={e => this.changeComment()}>Update</button>
         }
         {this.state.comment && 
           <article>
           <textarea placeholder='Type new reminder here'></textarea>
-          <button onClick={e => this.updateComment(this.props.id, e.target.previousElementSibling.value)}>Sumbit</button>
+          <br />
+          <button onClick={e => this.updateComment(this.props.id, 
+            e.target.previousElementSibling.previousElementSibling.value)}>Sumbit</button>
           </article>  
         }
+        <br />
         <Link to='/watchlist'>
-          <button onClick={e => this.props.removeFromWatchList(this.props.id)}>Remove From WatchList</button>
+          <button className='remove-btn' onClick={e => this.props.removeFromWatchList(this.props.id)}>Remove From WatchList</button>
         </Link>
+        </div>
+        <img className='side-image' src={this.props.posterImage.large}/>
       </section>
     )
   }
