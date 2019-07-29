@@ -21,7 +21,8 @@ class AnimeDetails extends Component {
         jpTitle: this.props.jpTitle,
         episodes: this.props.episodes,
         coverImage: this.props.coverImage,
-        currentEpisode: 1
+        currentEpisode: 1,
+        comment: ''
       }
       this.props.addToWatchList(show)  
     }
