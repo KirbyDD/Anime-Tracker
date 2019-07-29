@@ -7,7 +7,10 @@ class WatchListDetails extends Component {
     super(props);
     this.state = {
       epBtn: true,
-      form: false
+      form: false,
+      commentBtn: true,
+      comment: false,
+      commentText: this.setComment()
     }
   }
 
@@ -36,6 +39,13 @@ class WatchListDetails extends Component {
     })
   }
 
+  changeComment = () => {
+    this.setState({
+      commentBtn: false,
+      comment: true
+    })
+  }
+
   updateEpisode = (id, value) => {
     this.props.updateEpisode(id, value)
     this.setState({
@@ -49,9 +59,15 @@ class WatchListDetails extends Component {
     return show.currentEpisode
   }
 
+  setComment = () => {
+    let show = this.props.followedShows.find(show => show.id === this.props.id)
+    this.setState({ commentText: show.comment }) 
+  }
+
   render() {
     let title = this.titleToDisplay();
-    let currentEpisode = this.setCurrentEpisode()
+    let currentEpisode = this.setCurrentEpisode();
+    
     return(
       <section>
         <h2>{title}</h2>
@@ -67,7 +83,16 @@ class WatchListDetails extends Component {
           {this.numOptions()}
         </select>
         }
-
+        <p>Reminder Section</p>
+        {this.state.commentBtn && 
+          <button onClick={e => this.changeComment()}>Update</button>
+        }
+        {this.state.comment && 
+          <article>
+          <textarea value={this.state.commentText}></textarea>
+          <button>Sumbit</button>
+          </article>  
+        }
       </section>
     )
   }
