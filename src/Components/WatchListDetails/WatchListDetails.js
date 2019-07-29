@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {updateCurrentEpisode} from '../../actions/index'
+import {updateCurrentEpisode, updateComment} from '../../actions/index'
 
 class WatchListDetails extends Component {
   constructor(props) {
@@ -9,8 +9,7 @@ class WatchListDetails extends Component {
       epBtn: true,
       form: false,
       commentBtn: true,
-      comment: false,
-      commentText: this.setComment()
+      comment: false
     }
   }
 
@@ -54,6 +53,14 @@ class WatchListDetails extends Component {
     })
   }
 
+  updateComment = (id, value) => {
+    this.props.updateComment(id, value)
+    this.setState({
+      commentBtn: true,
+      comment: false
+    })
+  }
+
   setCurrentEpisode = () => {
     let show = this.props.followedShows.find(show => show.id === this.props.id)
     return show.currentEpisode
@@ -61,13 +68,13 @@ class WatchListDetails extends Component {
 
   setComment = () => {
     let show = this.props.followedShows.find(show => show.id === this.props.id)
-    this.setState({ commentText: show.comment }) 
+    return show.comment
   }
 
   render() {
     let title = this.titleToDisplay();
     let currentEpisode = this.setCurrentEpisode();
-    
+    let comment = this.setComment();
     return(
       <section>
         <h2>{title}</h2>
@@ -84,13 +91,14 @@ class WatchListDetails extends Component {
         </select>
         }
         <p>Reminder Section</p>
+        <p>{comment}</p>
         {this.state.commentBtn && 
           <button onClick={e => this.changeComment()}>Update</button>
         }
         {this.state.comment && 
           <article>
-          <textarea value={this.state.commentText}></textarea>
-          <button>Sumbit</button>
+          <textarea placeholder='Type new reminder here'></textarea>
+          <button onClick={e => this.updateComment(this.props.id, e.target.previousElementSibling.value)}>Sumbit</button>
           </article>  
         }
       </section>
@@ -103,7 +111,8 @@ const mapStateToProps = store => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  updateEpisode: (id, value) => dispatch(updateCurrentEpisode(id, value))
+  updateEpisode: (id, value) => dispatch(updateCurrentEpisode(id, value)),
+  updateComment: (id, comment) => dispatch(updateComment(id, comment))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(WatchListDetails)
