@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anime Container should match snapshot 1`] = `
+<nav
+  className="navbar"
+>
+  <NavLink
+    activeClassName="selected"
+    className="tab"
+    exact={true}
+    to="/"
+  >
+    Home
+  </NavLink>
+  <NavLink
+    activeClassName="selected"
+    className="tab"
+    exact={true}
+    to="/watchlist"
+  >
+    Your Watchlist
+  </NavLink>
+  <NavLink
+    activeClassName="selected"
+    className="tab"
+    exact={true}
+    to="/about"
+  >
+    Anime Dictionary
+  </NavLink>
+</nav>
+`;

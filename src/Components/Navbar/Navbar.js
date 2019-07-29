@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import './Navbar.scss';
 
-class Navbar extends Component {
+export class Navbar extends Component {
   constructor() {
     super();
     this.state = {
