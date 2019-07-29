@@ -3,9 +3,9 @@ import AnimeSnippet from '../AnimeSnippet/AnimeSnippet'
 import {connect} from 'react-redux';
 import './AnimeContainer.scss'
 
-const AnimeContainer = (props) => {
+export const AnimeContainer = (props) => {
   let list = props.anime.map(anime => {
-    return <AnimeSnippet {...anime}/>
+    return <AnimeSnippet {...anime} key={anime.id}/>
   })
   return (
     <section>
