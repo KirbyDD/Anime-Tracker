@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {updateCurrentEpisode, updateComment} from '../../actions/index'
+import {Link} from 'react-router-dom';
+import {updateCurrentEpisode, updateComment, removeShow} from '../../actions/index'
 
 class WatchListDetails extends Component {
   constructor(props) {
@@ -101,6 +102,9 @@ class WatchListDetails extends Component {
           <button onClick={e => this.updateComment(this.props.id, e.target.previousElementSibling.value)}>Sumbit</button>
           </article>  
         }
+        <Link to='/watchlist'>
+          <button onClick={e => this.props.removeFromWatchList(this.props.id)}>Remove From WatchList</button>
+        </Link>
       </section>
     )
   }
@@ -112,7 +116,8 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => ({
   updateEpisode: (id, value) => dispatch(updateCurrentEpisode(id, value)),
-  updateComment: (id, comment) => dispatch(updateComment(id, comment))
+  updateComment: (id, comment) => dispatch(updateComment(id, comment)),
+  removeFromWatchList: id => dispatch(removeShow(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(WatchListDetails)
