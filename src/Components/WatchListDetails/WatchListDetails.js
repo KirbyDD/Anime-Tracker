@@ -23,10 +23,19 @@ class WatchListDetails extends Component {
     this.setState({ currentEpisode: e.target.value })
   }
 
+  titleToDisplay = () => {
+    if(this.props.enTitle){
+      return this.props.enTitle
+    } else {
+      return this.props.jpTitle
+    }
+  }
+
   render() {
+    let title = this.titleToDisplay();
     return(
       <section>
-        <h2>{this.props.enTitle}</h2>
+        <h2>{title}</h2>
         <h3>{this.props.synopsis}</h3>
         <select onChange={e => this.updateEpisode(e)}>
           {this.numOptions()}
