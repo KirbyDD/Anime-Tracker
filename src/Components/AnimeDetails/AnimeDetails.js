@@ -51,10 +51,11 @@ class AnimeDetails extends Component {
     let title = this.titleToDisplay();
     let btntext = this.updateFavButton(this.props.id);
     return(
-      <section>
-        <img />
+      <section className='anime-details'>
+        <img src={this.props.posterImage.large} className='poster'/>
+        <div className='details-styling'>
         <h2>Title: {title}</h2>
-        <article>Synopsis
+        <article><h3>Synopsis</h3>
           <p>{this.props.synopsis}</p>
         </article>
         <div>
@@ -66,6 +67,7 @@ class AnimeDetails extends Component {
           <p>End Date: {this.props.endDate}</p>
           <p>Number of Episodes: {this.props.episodes}</p>
           <button onClick={e => this.checkList(this.props.id)}>{btntext}</button>
+        </div>
         </div>
       </section>
     )

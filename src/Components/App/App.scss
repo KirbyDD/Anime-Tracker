@@ -4,7 +4,7 @@
 
 .background-photo {
   position: fixed;
-  filter: brightness(40%);
+  filter: brightness(20%);
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -17,7 +17,11 @@ h1 {
 
 header {
   background-color: rgb(37, 37, 35);
-  padding: 20px;
+  padding: 17px;
   z-index: 1;
 }
 
+button {
+  height: 50px;
+  width: 130px;
+}
