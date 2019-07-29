@@ -9,16 +9,28 @@ class AnimeDetails extends Component {
   }
 
   checkList = id => {
-    if(this.props.followedShows.includes(id)){
+    let result = this.props.followedShows.find(show => show.id === id)
+    console.log(result)
+    if(result){
       this.props.removeFromWatchList(id)
     } else {
-      this.props.addToWatchList(id)  
+      let show = {
+        id: this.props.id,
+        synopsis: this.props.synopsis,
+        enTitle: this.props.enTitle,
+        jpTitle: this.props.jpTitle,
+        episodes: this.props.episodes,
+        coverImage: this.props.coverImage,
+        currentEpisode: 1
+      }
+      this.props.addToWatchList(show)  
     }
     this.updateFavButton(id);
   }
 
   updateFavButton = id => {
-    if(this.props.followedShows.includes(id)){
+    let result = this.props.followedShows.find(show => show.id === id)
+    if(result){
       return 'Remove from Watch List'
     } else {
       return 'Add to Watch List'
@@ -63,7 +75,7 @@ const mapStateToProps = store => ({
 })
 
 const mapDispatchToProps = dispatch =>({
-  addToWatchList: id => dispatch(addShow(id)),
+  addToWatchList: show => dispatch(addShow(show)),
   removeFromWatchList: id => dispatch(removeShow(id))
 })
 

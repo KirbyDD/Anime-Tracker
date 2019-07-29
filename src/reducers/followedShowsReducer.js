@@ -1,9 +1,9 @@
 export const followedShowsReducer = (state = [], action) => {
   switch (action.type){
     case 'ADD_SHOW':
-      return [...state, action.id]
+      return [...state, action.show]
     case 'REMOVE_SHOW':
-      return state.filter(id => id !== action.id)
+      return state.filter(show => show.id !== action.id)
     default:
       return state
   }

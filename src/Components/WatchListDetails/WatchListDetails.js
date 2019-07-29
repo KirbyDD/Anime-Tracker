@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { optionalCallExpression } from '@babel/types';
 
 class WatchListDetails extends Component {
   constructor(props) {
