@@ -35,5 +35,8 @@ exports[`App should match snapshot 1`] = `
     path="/watchlist/:id"
     render={[Function]}
   />
+  <Route
+    render={[Function]}
+  />
 </main>
 `;

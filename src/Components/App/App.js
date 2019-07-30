@@ -10,6 +10,7 @@ import "./App.scss";
 import AnimeDetails from "../AnimeDetails/AnimeDetails";
 import WatchListContainer from "../WatchListContainer/WatchListContainer";
 import WatchListDetails from "../WatchListDetails/WatchListDetails";
+import ErrorComponent from "../ErrorComponent/ErrorComponent";
 
 export class App extends Component {
   constructor() {
@@ -63,6 +64,11 @@ export class App extends Component {
             );
             console.log(show);
             return <WatchListDetails {...show} />;
+          }}
+        />
+        <Route
+          render={() => {
+            return <ErrorComponent />;
           }}
         />
       </main>

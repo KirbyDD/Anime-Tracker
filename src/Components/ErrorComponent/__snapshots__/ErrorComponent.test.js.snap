@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Component should match snapshot 1`] = `
+<section
+  className="error-section"
+>
+  <h2
+    className="error-msg"
+  >
+    404 Error. The page you are looking for does not exist. Please click the button below to go back to the Home Page
+  </h2>
+  <Link
+    className="home-link"
+    to="/"
+  >
+    Naruto Run Home
+  </Link>
+</section>
+`;
