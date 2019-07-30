@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { fetchAnime, fetchAdditionalAnime } from "../../apiCalls";
 import { gatherAnime, gatherMoreAnime } from "../../actions/index";
 import Navbar from "../Navbar/Navbar";
@@ -41,6 +41,7 @@ export class App extends Component {
           <h1>Anime Tracker</h1>
           <Navbar />
         </header>
+        <Switch>
         <Route exact path="/" render={() => <AnimeContainer />} />
         <Route exact path="/watchlist" render={() => <WatchListContainer />} />
         <Route
@@ -71,6 +72,7 @@ export class App extends Component {
             return <ErrorComponent />;
           }}
         />
+        </Switch>
       </main>
     );
   }
