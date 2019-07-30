@@ -24,9 +24,6 @@ export class Navbar extends Component {
         >
           Your Watchlist
         </NavLink>
-        <NavLink to="/about" className="tab" exact activeClassName="selected">
-          Anime Dictionary
-        </NavLink>
       </nav>
     );
   }
