@@ -8,11 +8,6 @@ export const removeShow = id => ({
   id
 })
 
-export const updateShow = id => ({
-  type: 'UPDATE_SHOW',
-  id
-})
-
 export const gatherAnime = data => ({
   type: 'GATHER_ANIME',
   data

@@ -1,6 +1,5 @@
 import React from 'react';
 import dataCleaner from './dataCleaner'
-import { isTSAnyKeyword } from '@babel/types';
 
 let expected = [{
   id: 1,
