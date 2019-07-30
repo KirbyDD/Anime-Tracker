@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Anime Tracker
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This project is a simple site, built with React and Redux, that displays popular anime. The user may hover over an anime poster to see the title of the anime, or select an anime poster and will be presented with information about that particular anime. The user may also add individual anime to their Watch List. When an anime is added to the Watch List, clicking the anime poster when provide options to set the last episode that you watched as well as the ability to remind yourself the last thing you saw if you have to return to the show after an extended period of time.
 
-### `npm start`
+## Setup
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Simply start by cloning this repo for front end and the following repo for the back end in sepreate folders:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```bash
+git clone git@github.com:KirbyDD/Anime-Tracker.git
+```
 
-### `npm test`
+Once you have cloned the repos, to install the library dependencies. Run:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+Run `npm start` in your terminal. Go to `http://localhost:3000/` and you should see a live version of the application if installed correctly.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshots
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Home Page:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img width="1426" alt="Screen Shot 2019-07-29 at 7 36 42 PM" src="https://user-images.githubusercontent.com/36940278/62094545-09f8f200-b26d-11e9-9fd8-b36da27dfda3.png">
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Individual Anime Details:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img width="1436" alt="Screen Shot 2019-07-29 at 7 37 21 PM" src="https://user-images.githubusercontent.com/36940278/62094562-17ae7780-b26d-11e9-97e8-995c834b7c4a.png">
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+individual WatchList Anime Details:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img width="1439" alt="Screen Shot 2019-07-29 at 7 42 02 PM" src="https://user-images.githubusercontent.com/36940278/62094581-27c65700-b26d-11e9-86c7-3fa50672bae8.png">
 
-## Learn More
+## Emphasis of the Project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Further knowledge on the following technologies/principles:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- ReactJS
+- Redux
+- Thunks
+- JSX
+- Jest and Enzyme Testing
+- Fetch API's
+- Asynchronous JS and Testing
+- Router
+- GitHub Issues
+- SCSS
