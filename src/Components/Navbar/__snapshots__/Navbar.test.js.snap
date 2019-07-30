@@ -20,13 +20,5 @@ exports[`Navbar should match snapshot 1`] = `
   >
     Your Watchlist
   </NavLink>
-  <NavLink
-    activeClassName="selected"
-    className="tab"
-    exact={true}
-    to="/about"
-  >
-    Anime Dictionary
-  </NavLink>
 </nav>
 `;
