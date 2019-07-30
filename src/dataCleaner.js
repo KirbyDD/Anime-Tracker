@@ -12,8 +12,8 @@ const dataCleaner = data => {
       posterImage: show.attributes.posterImage,
       coverImage: show.attributes.coverImage,
       episodes: show.attributes.episodeCount
-    }
-  })
-}
+    };
+  });
+};
 
 export default dataCleaner;
