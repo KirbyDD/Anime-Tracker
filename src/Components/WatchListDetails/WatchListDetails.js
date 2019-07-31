@@ -7,6 +7,7 @@ import {
   removeShow
 } from "../../actions/index";
 import "./WatchListDetails.scss";
+import PropTypes from "prop-types";
 
 export class WatchListDetails extends Component {
   constructor(props) {
@@ -145,6 +146,23 @@ const mapDispatchToProps = dispatch => ({
   updateComment: (id, comment) => dispatch(updateComment(id, comment)),
   removeFromWatchList: id => dispatch(removeShow(id))
 });
+
+WatchListDetails.propTypes = {
+  anime: PropTypes.array,
+  comment: PropTypes.string,
+  coverImage: PropTypes.object,
+  currentEpisode: PropTypes.number,
+  enTitle: PropTypes.string,
+  episodes: PropTypes.number,
+  followedShows: PropTypes.array,
+  id: PropTypes.string,
+  jpTitle: PropTypes.string,
+  posterImage: PropTypes.object,
+  removeFromWatchList: PropTypes.func,
+  synopsis: PropTypes.string,
+  updateComment: PropTypes.func,
+  updateEpisode: PropTypes.func
+};
 
 export default connect(
   mapStateToProps,

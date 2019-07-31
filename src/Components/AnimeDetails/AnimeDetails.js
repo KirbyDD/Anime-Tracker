@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./AnimeDetails.scss";
 import { addShow, removeShow } from "../../actions";
+import PropTypes from "prop-types";
 
 export class AnimeDetails extends Component {
   constructor(props) {
@@ -84,6 +85,24 @@ const mapDispatchToProps = dispatch => ({
   addToWatchList: show => dispatch(addShow(show)),
   removeFromWatchList: id => dispatch(removeShow(id))
 });
+
+AnimeDetails.propTypes = {
+  anime: PropTypes.array,
+  addToWatchList: PropTypes.func,
+  ageRating: PropTypes.string,
+  coverImage: PropTypes.object,
+  enTitle: PropTypes.string,
+  endDate: PropTypes.string,
+  episodes: PropTypes.number,
+  followedShows: PropTypes.array,
+  id: PropTypes.string,
+  jpTitle: PropTypes.string,
+  posterImage: PropTypes.object,
+  rating: PropTypes.string,
+  removeFromWatchList: PropTypes.func,
+  startDate: PropTypes.string,
+  synopsis: PropTypes.string
+};
 
 export default connect(
   mapStateToProps,
