@@ -11,6 +11,7 @@ import AnimeDetails from "../AnimeDetails/AnimeDetails";
 import WatchListContainer from "../WatchListContainer/WatchListContainer";
 import WatchListDetails from "../WatchListDetails/WatchListDetails";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
+import PropTypes from "prop-types";
 
 export class App extends Component {
   constructor() {
@@ -42,36 +43,40 @@ export class App extends Component {
           <Navbar />
         </header>
         <Switch>
-        <Route exact path="/" render={() => <AnimeContainer />} />
-        <Route exact path="/watchlist" render={() => <WatchListContainer />} />
-        <Route
-          exact
-          path="/anime/:id"
-          render={({ match }) => {
-            const id = match.params;
-            const show = this.props.anime.find(
-              anime => parseInt(anime.id) === parseInt(id.id)
-            );
-            return <AnimeDetails {...show} />;
-          }}
-        />
-        <Route
-          exact
-          path="/watchlist/:id"
-          render={({ match }) => {
-            const id = match.params;
-            const show = this.props.followedShows.find(
-              anime => parseInt(anime.id) === parseInt(id.id)
-            );
-            console.log(show);
-            return <WatchListDetails {...show} />;
-          }}
-        />
-        <Route
-          render={() => {
-            return <ErrorComponent />;
-          }}
-        />
+          <Route exact path="/" render={() => <AnimeContainer />} />
+          <Route
+            exact
+            path="/watchlist"
+            render={() => <WatchListContainer />}
+          />
+          <Route
+            exact
+            path="/anime/:id"
+            render={({ match }) => {
+              const id = match.params;
+              const show = this.props.anime.find(
+                anime => parseInt(anime.id) === parseInt(id.id)
+              );
+              return <AnimeDetails {...show} />;
+            }}
+          />
+          <Route
+            exact
+            path="/watchlist/:id"
+            render={({ match }) => {
+              const id = match.params;
+              const show = this.props.followedShows.find(
+                anime => parseInt(anime.id) === parseInt(id.id)
+              );
+              console.log(show);
+              return <WatchListDetails {...show} />;
+            }}
+          />
+          <Route
+            render={() => {
+              return <ErrorComponent />;
+            }}
+          />
         </Switch>
       </main>
     );
@@ -86,6 +91,13 @@ const mapDispatchToProps = dispatch => ({
   gatherAnime: data => dispatch(gatherAnime(data)),
   gatherMoreAnime: data => dispatch(gatherMoreAnime(data))
 });
+
+App.propTypes = {
+  anime: PropTypes.array,
+  followedShows: PropTypes.array,
+  gatherAnime: PropTypes.func,
+  gatherMoreAnime: PropTypes.func
+};
 
 export default connect(
   mapStateToProps,

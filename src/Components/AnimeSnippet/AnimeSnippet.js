@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./AnimeSnippet.scss";
+import PropTypes from "prop-types";
 
 export class AnimeSnippet extends Component {
   constructor(props) {
@@ -51,5 +52,19 @@ export class AnimeSnippet extends Component {
     );
   }
 }
+
+AnimeSnippet.propTypes = {
+  ageRating: PropTypes.string,
+  coverImage: PropTypes.object,
+  enTitle: PropTypes.string,
+  endDate: PropTypes.string,
+  episodes: PropTypes.number,
+  id: PropTypes.string,
+  jpTitle: PropTypes.string,
+  posterImage: PropTypes.object,
+  rating: PropTypes.string,
+  startDate: PropTypes.string,
+  synopsis: PropTypes.string
+};
 
 export default AnimeSnippet;
