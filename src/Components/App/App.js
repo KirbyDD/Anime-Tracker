@@ -83,11 +83,11 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   ...store
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   gatherAnime: data => dispatch(gatherAnime(data)),
   gatherMoreAnime: data => dispatch(gatherMoreAnime(data))
 });

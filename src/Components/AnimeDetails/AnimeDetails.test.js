@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { AnimeDetails } from "./AnimeDetails";
+import { AnimeDetails, mapStateToProps, mapDispatchToProps } from "./AnimeDetails";
+import { addShow, removeShow } from '../../actions/index'
 
 let props = {
   id: 1,
@@ -144,5 +145,34 @@ describe("Anime Details", () => {
       />
     );
     expect(wrapper.instance().titleToDisplay()).toEqual("Tronkat no Life desu");
+  });
+
+  describe('mapStateToProps', () => {
+    it('should return object with anime array', () => {
+      let mockState = {
+        anime: props,
+        followedShows
+      }
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(mockState)
+    })
+  })
+
+  describe('mapDispatchToProps', () => {
+    it('calls dispatch with an addShow action when addToWatchList is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = addShow(props);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.addToWatchList(props);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('calls dispatch with an removeShow action when removeFromWatchList is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = removeShow(props);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.removeFromWatchList(props);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
   });
 });

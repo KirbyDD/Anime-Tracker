@@ -16,7 +16,7 @@ export const AnimeContainer = props => {
   );
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   anime: store.anime
 });
 

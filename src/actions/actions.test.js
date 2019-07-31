@@ -61,7 +61,7 @@ describe("actions", () => {
       id: 1,
       comment: "Comment"
     };
-    const result = actions.updateComment(id, comment);
+    const result = actions.updateCurrentComment(id, comment);
     expect(result).toEqual(expectedAction);
   });
 });

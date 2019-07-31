@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { WatchListDetails } from "./WatchListDetails";
-import { exportAllDeclaration } from "@babel/types";
+import { WatchListDetails, mapStateToProps, mapDispatchToProps } from "./WatchListDetails";
+import {updateCurrentComment, updateCurrentEpisode, removeShow} from '../../actions/index'
 
 let props = {
   id: 1,
@@ -223,5 +223,42 @@ describe("WatchList Details", () => {
       />
     );
     expect(wrapper.instance().setComment()).toEqual("Testing");
+  });
+
+  describe('mapStateToProps', () => {
+    it('should return object with anime array', () => {
+      let mockState = {
+        anime: props,
+        followedShows
+      }
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(mockState)
+    })
+  })
+
+  describe('mapDispatchToProps', () => {
+    it('calls dispatch with an addShow action when addToWatchList is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = updateCurrentEpisode(1, 4);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.updateEpisode(1, 4);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('calls dispatch with an removeShow action when removeFromWatchList is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = updateCurrentComment(1, 'hello');
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.updateComment(1, 'hello');
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('calls dispatch with an removeShow action when removeFromWatchList is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = removeShow(1);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.removeFromWatchList(1);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
   });
 });

@@ -77,11 +77,11 @@ export class AnimeDetails extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   ...store
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addToWatchList: show => dispatch(addShow(show)),
   removeFromWatchList: id => dispatch(removeShow(id))
 });
@@ -95,7 +95,7 @@ AnimeDetails.propTypes = {
   endDate: PropTypes.string,
   episodes: PropTypes.number,
   followedShows: PropTypes.array,
-  id: PropTypes.string,
+  id: PropTypes.number,
   jpTitle: PropTypes.string,
   posterImage: PropTypes.object,
   rating: PropTypes.string,

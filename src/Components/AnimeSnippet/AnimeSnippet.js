@@ -59,7 +59,7 @@ AnimeSnippet.propTypes = {
   enTitle: PropTypes.string,
   endDate: PropTypes.string,
   episodes: PropTypes.number,
-  id: PropTypes.string,
+  id: PropTypes.number,
   jpTitle: PropTypes.string,
   posterImage: PropTypes.object,
   rating: PropTypes.string,

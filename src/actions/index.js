@@ -24,7 +24,7 @@ export const updateCurrentEpisode = (id, value) => ({
   value
 });
 
-export const updateComment = (id, comment) => ({
+export const updateCurrentComment = (id, comment) => ({
   type: "UPDATE_COMMENT",
   id,
   comment

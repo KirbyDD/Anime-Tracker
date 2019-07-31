@@ -11,7 +11,7 @@ export const WatchListContainer = props => {
   return <section className="watchlist">{list}</section>;
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   ...store
 });
 

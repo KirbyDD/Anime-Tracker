@@ -15,28 +15,30 @@ exports[`App should match snapshot 1`] = `
     </h1>
     <Navbar />
   </header>
-  <Route
-    exact={true}
-    path="/"
-    render={[Function]}
-  />
-  <Route
-    exact={true}
-    path="/watchlist"
-    render={[Function]}
-  />
-  <Route
-    exact={true}
-    path="/anime/:id"
-    render={[Function]}
-  />
-  <Route
-    exact={true}
-    path="/watchlist/:id"
-    render={[Function]}
-  />
-  <Route
-    render={[Function]}
-  />
+  <Switch>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/watchlist"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/anime/:id"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/watchlist/:id"
+      render={[Function]}
+    />
+    <Route
+      render={[Function]}
+    />
+  </Switch>
 </main>
 `;

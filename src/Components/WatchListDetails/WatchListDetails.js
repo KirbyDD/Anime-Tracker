@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   updateCurrentEpisode,
-  updateComment,
+  updateCurrentComment,
   removeShow
 } from "../../actions/index";
 import "./WatchListDetails.scss";
@@ -137,13 +137,13 @@ export class WatchListDetails extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   ...store
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   updateEpisode: (id, value) => dispatch(updateCurrentEpisode(id, value)),
-  updateComment: (id, comment) => dispatch(updateComment(id, comment)),
+  updateComment: (id, comment) => dispatch(updateCurrentComment(id, comment)),
   removeFromWatchList: id => dispatch(removeShow(id))
 });
 
@@ -155,7 +155,7 @@ WatchListDetails.propTypes = {
   enTitle: PropTypes.string,
   episodes: PropTypes.number,
   followedShows: PropTypes.array,
-  id: PropTypes.string,
+  id: PropTypes.number,
   jpTitle: PropTypes.string,
   posterImage: PropTypes.object,
   removeFromWatchList: PropTypes.func,
