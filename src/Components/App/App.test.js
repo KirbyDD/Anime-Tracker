@@ -1,24 +1,11 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { App, mapStateToProps, mapDispatchToProps } from "./App";
-import { gatherAnime, gatherMoreAnime } from '../../actions/index'
+import { gatherAnime, gatherMoreAnime } from '../../actions/index';
+import {fetchAnime} from '../../apiCalls';
 
-let animeList = [
-  {
-    name: "anime1",
-    id: 1
-  },
-  {
-    name: "anime2",
-    id: 2
-  },
-  {
-    name: "anime3",
-    id: 3
-  }
-];
 
-let props = {
+const anime = {
   id: 1,
   synopsis: "This is the synopsis",
   enTitle: "Life of TronKat",
@@ -37,6 +24,92 @@ let props = {
   endDate: "Still Playing",
   ageRating: "17+"
 };
+
+jest.mock('../../apiCalls.js', () => ({
+  fetchAnime: jest.fn().mockImplementation(() => {
+    return Promise.resolve({
+      id: 1,
+      synopsis: "This is the synopsis",
+      enTitle: "Life of TronKat",
+      jpTitle: "Tronkat no Life desu",
+      episodes: 27,
+      posterImage: {
+        large: "https://i.imgur.com/vihivug.jpg",
+        tiny: null
+      },
+      coverImage: {
+        small: "https://i.imgur.com/vihivug.jpg",
+        tiny: null
+      },
+      rating: "99.9",
+      startDate: "1990-01-26",
+      endDate: "Still Playing",
+      ageRating: "17+"
+    })
+  }),
+  fetchAdditionalAnime: jest.fn().mockImplementation(() => {
+    return Promise.resolve({
+      id: 1,
+      synopsis: "This is the synopsis",
+      enTitle: "Life of TronKat",
+      jpTitle: "Tronkat no Life desu",
+      episodes: 27,
+      posterImage: {
+        large: "https://i.imgur.com/vihivug.jpg",
+        tiny: null
+      },
+      coverImage: {
+        small: "https://i.imgur.com/vihivug.jpg",
+        tiny: null
+      },
+      rating: "99.9",
+      startDate: "1990-01-26",
+      endDate: "Still Playing",
+      ageRating: "17+"
+    })
+  }),
+
+}))
+
+jest.mock('../../dataCleaner.js', () => ({
+  dataCleaner: jest.fn().mockImplementation(() => {
+    return Promise.resolve({
+      id: 1,
+      synopsis: "This is the synopsis",
+      enTitle: "Life of TronKat",
+      jpTitle: "Tronkat no Life desu",
+      episodes: 27,
+      posterImage: {
+        large: "https://i.imgur.com/vihivug.jpg",
+        tiny: null
+      },
+      coverImage: {
+        small: "https://i.imgur.com/vihivug.jpg",
+        tiny: null
+      },
+      rating: "99.9",
+      startDate: "1990-01-26",
+      endDate: "Still Playing",
+      ageRating: "17+"
+    })
+  })
+}))
+
+
+let animeList = [
+  {
+    name: "anime1",
+    id: 1
+  },
+  {
+    name: "anime2",
+    id: 2
+  },
+  {
+    name: "anime3",
+    id: 3
+  }
+];
 
 let followedShows = [
   {
@@ -60,12 +133,20 @@ let followedShows = [
   }
 ];
 
+let props = {
+  anime: [anime],
+  followedShows,
+  gatherAnime: jest.fn(),
+  gatherMoreAnime: jest.fn(),
+}
+
+
+
 describe("App", () => {
   let wrapper;
-
   beforeEach(function() {
-    wrapper = shallow(<App />);
-
+    wrapper = shallow(<App  {...props} />);
+    
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({
         json: () => Promise.resolve(animeList)
@@ -76,6 +157,11 @@ describe("App", () => {
   it("should match snapshot", () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should call fetchAnime, dataCleaner', async () => {
+    await wrapper.instance().componentDidMount();
+    expect(fetchAnime).toHaveBeenCalled();
+  })
 })
 
   describe('mapStateToProps', () => {

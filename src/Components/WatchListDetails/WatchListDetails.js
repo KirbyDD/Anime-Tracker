@@ -90,10 +90,11 @@ export class WatchListDetails extends Component {
           <p className="detail-text">What Episode are you currently on?</p>
           <p className="detail-text">{currentEpisode}</p>
           {this.state.epBtn && (
-            <button onClick={e => this.changeCurrentEpisode()}>Update</button>
+            <button id='epBtn' onClick={e => this.changeCurrentEpisode()}>Update</button>
           )}
           {this.state.form && (
             <select
+              id='update-epBtn'
               onChange={e => this.updateEpisode(this.props.id, e.target.value)}
               selected={this.props.currentEpisode}
             >
@@ -103,13 +104,14 @@ export class WatchListDetails extends Component {
           <p className="detail-text">Reminder Section</p>
           <p className="detail-text">{comment}</p>
           {this.state.commentBtn && (
-            <button onClick={e => this.changeComment()}>Update</button>
+            <button id='commentBtn' onClick={e => this.changeComment()}>Update</button>
           )}
           {this.state.comment && (
             <article>
               <textarea placeholder="Type new reminder here" />
               <br />
               <button
+                id='update-commentBtn'
                 onClick={e =>
                   this.updateComment(
                     this.props.id,

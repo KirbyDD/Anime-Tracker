@@ -18,16 +18,15 @@ export class App extends Component {
     super();
   }
   async componentDidMount() {
-    try {
-      const result = await fetchAnime();
-      const cleanData = dataCleaner(result.data);
-      this.props.gatherAnime(cleanData);
-      const result2 = await fetchAdditionalAnime();
-      const cleanData2 = dataCleaner(result2.data);
-      this.props.gatherMoreAnime(cleanData2);
-    } catch (error) {
-      console.log(error);
-    }
+    await fetchAnime()
+      .then(result=> dataCleaner(result.data))
+      .then(cleanData => this.props.gatherAnime(cleanData))
+      .catch(error => error.message)
+    
+    fetchAdditionalAnime()
+      .then(result2 => dataCleaner(result2.data))
+      .then(cleanData2 => this.props.gatherMoreAnime(cleanData2))
+      .catch(error => error.message)
   }
 
   render() {

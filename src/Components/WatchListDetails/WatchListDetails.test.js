@@ -85,10 +85,12 @@ describe("WatchList Details", () => {
   let wrapper;
   let updateEpisode;
   let updateComment;
+  let removeFromWatchList;
 
   beforeEach(function() {
     updateEpisode = jest.fn();
     updateComment = jest.fn();
+    removeFromWatchList = jest.fn();
     wrapper = shallow(
       <WatchListDetails
         {...props}
@@ -96,6 +98,7 @@ describe("WatchList Details", () => {
         followedShows={followedShows}
         updateEpisode={updateEpisode}
         updateComment={updateComment}
+        removeFromWatchList={removeFromWatchList}
       />
     );
   });
@@ -113,6 +116,47 @@ describe("WatchList Details", () => {
     wrapper.instance().changeComment();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should call ChangeCurrentEpisode on click', () => {
+    wrapper.instance().changeCurrentEpisode = jest.fn();
+    wrapper.find('#epBtn').simulate('click');
+    expect(wrapper.instance().changeCurrentEpisode).toHaveBeenCalled();
+  })
+
+  it('should call updateEpisode on change', () => {
+    wrapper.setState({ form: true })
+    wrapper.instance().updateEpisode = jest.fn();
+    wrapper.find('#update-epBtn').simulate('change', {
+      target: {value: 4}
+    });
+    expect(wrapper.instance().updateEpisode).toHaveBeenCalled();
+  })
+
+  it('should call changeComment on click', () => {
+    wrapper.instance().changeComment = jest.fn();
+    wrapper.find('#commentBtn').simulate('click');
+    expect(wrapper.instance().changeComment).toHaveBeenCalled();
+  })
+
+  it('should call updateComment on change', () => {
+    wrapper.setState({ comment: true })
+    wrapper.instance().updateComment = jest.fn();
+    wrapper.find('#update-commentBtn').simulate('click', {
+      target: { 
+        previousElementSibling: {
+          previousElementSibling:{
+            value: 'Hi'
+          }
+        }
+      }
+    });
+    expect(wrapper.instance().updateComment).toHaveBeenCalled();
+  })
+
+  it('should call removeFromWatchList on click', () => {
+    wrapper.find('.remove-btn').simulate('click');
+    expect(wrapper.instance().props.removeFromWatchList).toHaveBeenCalled();
+  })
 
   it("should have default state properties", () => {
     expect(wrapper.state()).toEqual({
