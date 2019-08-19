@@ -1,5 +1,8 @@
 # Anime Tracker
 
+## Live Version
+https://kirby-anime-tracker.herokuapp.com/
+
 ## Description
 
 This project is a simple site, built with React and Redux, that displays popular anime. The user may hover over an anime poster to see the title of the anime, or select an anime poster and will be presented with information about that particular anime. The user may also add individual anime to their Watch List. When an anime is added to the Watch List, clicking the anime poster when provide options to set the last episode that you watched as well as the ability to remind yourself the last thing you saw if you have to return to the show after an extended period of time.
