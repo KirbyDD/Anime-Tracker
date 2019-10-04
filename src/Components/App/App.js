@@ -12,6 +12,7 @@ import WatchListContainer from "../WatchListContainer/WatchListContainer";
 import WatchListDetails from "../WatchListDetails/WatchListDetails";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
 import PropTypes from "prop-types";
+import Dictionary from "../Dictionary/Dictionary";
 
 export class App extends Component {
   constructor() {
@@ -48,6 +49,7 @@ export class App extends Component {
             path="/watchlist"
             render={() => <WatchListContainer />}
           />
+          <Route exact path="/dictionary" render={() => <Dictionary />} />
           <Route
             exact
             path="/anime/:id"
