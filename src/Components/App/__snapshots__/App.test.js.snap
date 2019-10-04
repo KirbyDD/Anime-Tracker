@@ -10,7 +10,9 @@ exports[`App should match snapshot 1`] = `
     src="https://images6.alphacoders.com/656/thumb-1920-656029.png"
   />
   <header>
-    <h1>
+    <h1
+      className="site-title"
+    >
       Anime Tracker
     </h1>
     <Navbar />
@@ -24,6 +26,11 @@ exports[`App should match snapshot 1`] = `
     <Route
       exact={true}
       path="/watchlist"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/dictionary"
       render={[Function]}
     />
     <Route
