@@ -39,7 +39,7 @@ export class App extends Component {
           className="background-photo"
         />
         <header>
-          <h1>Anime Tracker</h1>
+          <h1 className='site-title'>Anime Tracker</h1>
           <Navbar />
         </header>
         <Switch>

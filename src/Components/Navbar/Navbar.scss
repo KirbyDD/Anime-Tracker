@@ -8,11 +8,16 @@
   background-color: black;
   box-shadow: 3px 5px 3px gold;
   color: gold;
-  font-size: 23px;
+  font-size: 33px;
   height: 70px;
-  width: 115px;
+  width: 315px;
   text-align: center;
   text-decoration: none;
+  &:hover {
+    box-shadow: 3px 5px 3px white;
+    color: white;
+    transition: .3s;
+  }
 }
 
 .selected {
