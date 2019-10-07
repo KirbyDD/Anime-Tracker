@@ -42,6 +42,17 @@ export class App extends Component {
     this.setState({pageOffset: this.state.pageOffset+=20})
   }
 
+  previousPage = async () => {
+    if(this.state.pageOffset !== 0){
+      await fetchAnime(this.state.pageOffset-20)
+      .then(result=> dataCleaner(result.data))
+      .then(cleanData => this.props.gatherAnime(cleanData))
+      .catch(error => error.message)
+
+      this.setState({pageOffset: this.state.pageOffset-=20})
+    }
+  }
+
   render() {
     return (
       <main className="app">
@@ -55,7 +66,7 @@ export class App extends Component {
           <Navbar />
         </header>
         <Switch>
-          <Route exact path="/" render={() => <AnimeContainer nextPage={this.nextPage}/>} />
+          <Route exact path="/" render={() => <AnimeContainer previousPage={this.previousPage} nextPage={this.nextPage} check={this.state.pageOffset}/>} />
           <Route
             exact
             path="/watchlist"
