@@ -11,6 +11,7 @@ export const AnimeContainer = props => {
   return (
     <section>
       <h2>List of Shows</h2>
+      <button onClick={props.nextPage}>Next Page</button>
       <div className="list-container">{list}</div>
     </section>
   );

@@ -17,17 +17,29 @@ import Dictionary from "../Dictionary/Dictionary";
 export class App extends Component {
   constructor() {
     super();
+    this.state = {
+      pageOffset: 0
+    }
   }
   async componentDidMount() {
-    await fetchAnime()
+    await fetchAnime(this.state.pageOffset)
       .then(result=> dataCleaner(result.data))
       .then(cleanData => this.props.gatherAnime(cleanData))
       .catch(error => error.message)
     
-    fetchAdditionalAnime()
-      .then(result2 => dataCleaner(result2.data))
-      .then(cleanData2 => this.props.gatherMoreAnime(cleanData2))
-      .catch(error => error.message)
+    // fetchAdditionalAnime()
+    //   .then(result2 => dataCleaner(result2.data))
+    //   .then(cleanData2 => this.props.gatherMoreAnime(cleanData2))
+    //   .catch(error => error.message)
+  }
+
+  nextPage = async () => {
+    await fetchAnime(this.state.pageOffset+20)
+    .then(result=> dataCleaner(result.data))
+    .then(cleanData => this.props.gatherAnime(cleanData))
+    .catch(error => error.message)
+    
+    this.setState({pageOffset: this.state.pageOffset+=20})
   }
 
   render() {
@@ -43,7 +55,7 @@ export class App extends Component {
           <Navbar />
         </header>
         <Switch>
-          <Route exact path="/" render={() => <AnimeContainer />} />
+          <Route exact path="/" render={() => <AnimeContainer nextPage={this.nextPage}/>} />
           <Route
             exact
             path="/watchlist"
