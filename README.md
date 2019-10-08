@@ -1,7 +1,7 @@
 # Anime Tracker
 
 ## Live Version
-https://kirby-anime-tracker.herokuapp.com/
+www.anime-tracker.com
 
 ## Description
 
