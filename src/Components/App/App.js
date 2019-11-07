@@ -26,11 +26,6 @@ export class App extends Component {
       .then(result=> dataCleaner(result.data))
       .then(cleanData => this.props.gatherAnime(cleanData))
       .catch(error => error.message)
-    
-    // fetchAdditionalAnime()
-    //   .then(result2 => dataCleaner(result2.data))
-    //   .then(cleanData2 => this.props.gatherMoreAnime(cleanData2))
-    //   .catch(error => error.message)
   }
 
   nextPage = async () => {
