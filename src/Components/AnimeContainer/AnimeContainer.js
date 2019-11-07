@@ -16,6 +16,10 @@ export const AnimeContainer = props => {
         <button onClick={props.nextPage}>Next Page</button>
       </div>
       <div className="list-container">{list}</div>
+      <div className='buttons'>
+        {props.check !== 0 && <button onClick={props.previousPage}>Previous Page</button>}
+        <button onClick={props.nextPage}>Next Page</button>
+      </div>
     </section>
   );
 };
