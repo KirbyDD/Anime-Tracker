@@ -4,6 +4,19 @@
 }
 
 .details-styling {
-  font-size: 20px;
+  font-size: 23px;
   padding: 30px;
+}
+
+.fav-btn {
+  box-shadow: 3px 5px 3px gold;
+  background-color: black;
+  color: gold;
+  font-size: 20px;
+  width: 140px;
+  &:hover {
+    box-shadow: 3px 5px 3px white;
+    color: white;
+    transition: .3s;
+  }
 }

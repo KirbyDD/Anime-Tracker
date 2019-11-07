@@ -67,7 +67,7 @@ export class AnimeDetails extends Component {
             <p>Start Date: {this.props.startDate}</p>
             <p>End Date: {this.props.endDate}</p>
             <p>Number of Episodes: {this.props.episodes}</p>
-            <button onClick={e => this.checkList(this.props.id)}>
+            <button className='fav-btn' onClick={e => this.checkList(this.props.id)}>
               {btntext}
             </button>
           </div>
