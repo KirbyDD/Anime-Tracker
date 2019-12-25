@@ -25,3 +25,14 @@
   color: black;
   box-shadow: 3px 5px 3px white;
 }
+
+@media only screen and (max-width: 600px) {
+  .tab {
+    font-size: 18px;
+    width: 90px;
+  }
+
+  .navbar {
+    margin: 5px;
+  }
+}
