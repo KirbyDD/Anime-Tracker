@@ -39,11 +39,11 @@ Clicking Next Button to Populate new anime:
 
 Individual Anime Details:
 
-<img width="1436" alt="Screen Shot 2019-07-29 at 7 37 21 PM" src="https://user-images.githubusercontent.com/36940278/62094562-17ae7780-b26d-11e9-97e8-995c834b7c4a.png">
+<img width="1440" alt="Screen Shot 2020-01-06 at 12 50 32 PM" src="https://user-images.githubusercontent.com/36940278/71844571-59fe9f00-30be-11ea-8e16-f86ca4adbeac.png">
 
 Individual WatchList Anime Details:
 
-<img width="1439" alt="Screen Shot 2019-07-29 at 7 42 02 PM" src="https://user-images.githubusercontent.com/36940278/62094581-27c65700-b26d-11e9-86c7-3fa50672bae8.png">
+<img width="1440" alt="Screen Shot 2020-01-06 at 12 51 30 PM" src="https://user-images.githubusercontent.com/36940278/71844584-5ec35300-30be-11ea-9152-b30701c83e83.png">
 
 Anime Dictionary:
 
