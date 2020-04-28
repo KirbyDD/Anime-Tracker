@@ -3,3 +3,9 @@ export const fetchAnime = (offset) => {
     .then(response => response.json())
     .catch(error => error.message);
 };
+
+export const fetchTerms = () => {
+  return fetch('http://anime-tracker-be.herokuapp.com/api/v1/terms')
+    .then(response => response.json())
+    .catch(error => error.message);
+};
